@@ -35,6 +35,13 @@ catkin_make --pkg orcvio --cmake-args -DCMAKE_BUILD_TYPE=Release
 source devel/setup.bash 
 ```
 
+# Docker 
+
+- This docker images supports OpenVINS, VINS fusion, OrcVIO, and OS is Ubuntu 18.04, with ROS Melodic, and VNC
+```
+docker pull moshan/open_orcvio_cpp_docker:cpu
+```
+
 # Run 
 
 - EuRoC dataset 
