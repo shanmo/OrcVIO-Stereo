@@ -1,0 +1,7 @@
+path_gt: "/home/erl/dcist_vio_workspace/stereo_orcvio_ws/src/slam_groundtruth_comparison/data/euroc_mav/V1_01_easy.csv"
+
+gtTslam: 
+    [-0.973632,   0.222831, -0.0488523,    0.811762,
+      -0.223219,  -0.974765, 0.00256102,    2.33515,
+      -0.0470488,  0.0133983,  0.998803,    0.857574,
+      0.0, 0.0, 0.0, 1.0]

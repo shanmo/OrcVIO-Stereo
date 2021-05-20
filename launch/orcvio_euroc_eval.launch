@@ -1,0 +1,70 @@
+<launch>
+
+  <arg name="robot" default="firefly_sbx"/>
+  <arg name="fixed_frame_id" default="global"/>
+  <arg name="calibration_file"
+    default="$(find orcvio)/config/camchain-imucam-euroc.yaml"/>
+    <arg name="path_traj" default="/home/erl/dcist_vio_workspace/stereo_orcvio_ws/src/stereo_orcvio/cache/euroc/MH_01_easy/" />
+
+  <!-- Image Processor Nodelet  -->
+  <include file="$(find orcvio)/launch/image_processor_euroc.launch">
+    <arg name="robot" value="$(arg robot)"/>
+    <arg name="calibration_file" value="$(arg calibration_file)"/>
+  </include>
+
+  <!-- OrcVIO Nodelet  -->
+  <group ns="$(arg robot)">
+    <node pkg="nodelet" type="nodelet" name="vio"
+      args='standalone orcvio/OrcVioNodelet'
+      output="screen">
+
+      <!-- Calibration parameters -->
+      <rosparam command="load" file="$(arg calibration_file)"/>
+
+      <param name="publish_tf" value="true"/>
+      <param name="fixed_frame_id" value="$(arg fixed_frame_id)"/>
+      <param name="child_frame_id" value="odom"/>
+      <param name="max_cam_state_size" value="20"/>
+      <param name="position_std_threshold" value="8.0"/>
+
+      <param name="rotation_threshold" value="0.2618"/>
+      <param name="translation_threshold" value="0.4"/>
+      <param name="tracking_rate_threshold" value="0.5"/>
+
+      <!-- Feature optimization config -->
+      <param name="feature/config/translation_threshold" value="-1.0"/>
+
+      <!-- These values should be standard deviation -->
+      <param name="noise/gyro" value="0.005"/>
+      <param name="noise/acc" value="0.05"/>
+      <param name="noise/gyro_bias" value="0.001"/>
+      <param name="noise/acc_bias" value="0.01"/>
+      <param name="noise/feature" value="0.035"/>
+
+      <param name="initial_state/velocity/x" value="0.0"/>
+      <param name="initial_state/velocity/y" value="0.0"/>
+      <param name="initial_state/velocity/z" value="0.0"/>
+
+      <!-- These values should be covariance -->
+      <param name="initial_covariance/velocity" value="0.25"/>
+      <param name="initial_covariance/gyro_bias" value="0.01"/>
+      <param name="initial_covariance/acc_bias" value="0.01"/>
+      <param name="initial_covariance/extrinsic_rotation_cov" value="3.0462e-4"/>
+      <param name="initial_covariance/extrinsic_translation_cov" value="2.5e-5"/>
+
+      <remap from="~imu" to="/imu0"/>
+      <remap from="~features" to="image_processor/features"/>
+
+      <param name="use_mono_flag" value="true"/>
+
+      <param name="output_dir_traj"  type="string" value="$(arg path_traj)"/>
+      <param name="output_dir_log"  type="string" value="$(arg path_traj)"/>
+
+    </node>
+  </group>
+
+    <arg name="path_bag" default="/media/erl/disk2/euroc/MH_01_easy.bag" />
+    <arg name="bag_start" default="40" />
+  <node pkg="rosbag" type="play" name="rosbag" args="-s $(arg bag_start) $(arg path_bag)" required="true"/>
+
+</launch>
