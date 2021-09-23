@@ -5,18 +5,14 @@ This repo is used in OrcVIO [project website](http://me-llamo-sean.cf/orcvio_git
 If you find this repo useful, kindly cite our publications 
 
 ```
-@article{orcvio,
+@inproceedings{shan2020orcvio,
   title={OrcVIO: Object residual constrained Visual-Inertial Odometry},
-  author={M. {Shan} and Q. {Feng} and N. {Atanasov}},
-  url = {http://erl.ucsd.edu/pages/orcvio.html},
-  pdf = {https://arxiv.org/abs/2007.15107},
-  journal={IEEE Transactions on Robotics},
-  volume={},
-  number={},
-  pages={},
-  year={2021},
-  publisher={IEEE}
-}   
+  author={Shan, Mo and Feng, Qiaojun and Atanasov, Nikolay},
+  booktitle={2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={5104--5111},
+  year={2020},
+  organization={IEEE}
+}  
 ```
 
 # OrcVIO 
