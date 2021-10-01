@@ -26,7 +26,7 @@ If you find this repo useful, kindly cite our publications
 ```
 mkdir -p stereo_orcvio_ws/src
 cd stereo_orcvio_ws/src
-git clone https://github.com/moshanATucsd/stereo_orcvio.git
+git clone https://github.com/shanmo/OrcVIO-Stereo.git
 cd ../
 catkin_make --pkg orcvio --cmake-args -DCMAKE_BUILD_TYPE=Release
 source devel/setup.bash 
