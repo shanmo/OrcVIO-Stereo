@@ -209,6 +209,18 @@ We evaluated the speed of Stereo OrcVIO with Xavier NX and Realsense D435i, and 
 
 # Acknowledgement 
 
+The MSCKF implementation from UPenn is especially helpful for the development of this codebase, below are copyright and citation for their codebase and paper  
+```cpp
+/*
+ * COPYRIGHT AND PERMISSION NOTICE
+ * Penn Software MSCKF_VIO
+ * Copyright (C) 2017 The Trustees of the University of Pennsylvania
+ * All rights reserved.
+*/
+```
+
+> Sun, K., Mohta, K., Pfrommer, B., Watterson, M., Liu, S., Mulgaonkar, Y., ... & Kumar, V. (2018). Robust stereo visual inertial odometry for fast autonomous flight. IEEE Robotics and Automation Letters, 3(2), 965-972.
+
 Some parts of the repo are from the following 
 
 - https://github.com/KumarRobotics/msckf_vio
@@ -218,16 +230,3 @@ Some parts of the repo are from the following
 - https://github.com/symao/open_vins
 - https://github.com/symao/vio_evaluation
 - https://github.com/HKUST-Aerial-Robotics/VINS-Mono
-
-The MSCKF implementation from UPenn is especially helpful for the development of this codebase, below are copyright and citation for their codebase and paper  
-```cpp
-/*
- * COPYRIGHT AND PERMISSION NOTICE
- * Penn Software MSCKF_VIO
- * Copyright (C) 2017 The Trustees of the University of Pennsylvania
- * All rights reserved.
- */
- ```
- ```
-Sun, K., Mohta, K., Pfrommer, B., Watterson, M., Liu, S., Mulgaonkar, Y., ... & Kumar, V. (2018). Robust stereo visual inertial odometry for fast autonomous flight. IEEE Robotics and Automation Letters, 3(2), 965-972.
- ```
