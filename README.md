@@ -59,7 +59,9 @@ rosbag play V1_01_easy.bag or rosbag play MH_01_easy.bag
   rosbag play MH_01_easy.bag
   ```
   
-- [demo video](https://youtu.be/8b4WYOeHOXM)
+- visualization
+> [demo video](https://youtu.be/8b4WYOeHOXM)
+![demo](assets/demo-euroc.gif)
 
 # evaluation 
 
