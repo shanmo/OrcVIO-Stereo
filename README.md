@@ -58,6 +58,8 @@ rosbag play V1_01_easy.bag or rosbag play MH_01_easy.bag
   roslaunch orcvio orcvio_euroc.launch 
   rosbag play MH_01_easy.bag
   ```
+  
+- [demo video](https://youtu.be/8b4WYOeHOXM)
 
 # evaluation 
 
